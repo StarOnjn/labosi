@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            border: solid 1px;
+        }
+        td {
+            border: dotted 1px red;
+        }
+    </style>
+</head>
+<body>
+
+<div> <strong>Pronađi mi:</strong>
+    <input type="text" id="upit" name="upit">
+    <input type="button" onclick="pozoviFunkciju()" value="Pronađi!">
+    <br />
+    <br />
+    <div id="podaci"></div>
+</div>
+
+</body>
+<script type="application/javascript">
+    function pozoviFunkciju() {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+
+                var popis=JSON.parse(xmlhttp.responseText);
+                if (popis.ERROR)
+                    if (popis.ERROR.length > 0) {
+                        alert("ERROR:" + popis.ERROR);
+                        return;
+                }
+
+                if (popis.PODACI.length > 0) {
+
+                var text='<table>';
+                var index;
+                for (index = 0; index < popis.PODACI.length; ++index) {
+                    text+='<tr><td>'+popis.PODACI[index]+'</td></tr>';
+                }
+                text+='</table>';
+                document.getElementById("podaci").innerHTML = text;
+              }
+
+
+            }
+        }
+        xmlhttp.open("GET","primjer6.php?upit="+document.getElementById("upit").value,true);
+        xmlhttp.send();
+    }
+</script>
+</html>

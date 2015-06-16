@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            border: solid 1px;
+        }
+        td {
+            border: dotted 1px red;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <strong>Pronađi mi:</strong>
+    <input type="text" id="upit" >
+    <input type="button" onclick="pozoviFunkciju()" value="Pronađi!">
+    <br />
+    <br />
+    <div id="podaci"></div>
+</div>
+
+</body>
+
+<script type="application/javascript">
+
+    function callbackFunkcija() {
+        alert("Ready state stanje = " + xmlhttp.readyState);
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("podaci").innerHTML = xmlhttp.responseText;
+        }
+    }
+
+    function pozoviFunkciju() {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+
+        xmlhttp.onreadystatechange = callbackFunkcija;
+
+
+        xmlhttp.open("GET","primjer2.php?upit="+document.getElementById("upit").value,true);
+        xmlhttp.send();
+    }
+</script>
+</html>

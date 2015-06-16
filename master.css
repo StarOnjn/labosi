@@ -1,0 +1,49 @@
+﻿html{
+height:100%;
+}
+body 
+{ 
+height:96%;
+display:block;
+font-size:16px;
+line-height:1.5em;
+font-weight: 700;
+font-style: normal;
+margin: 0 auto; max-width: 1080px; min-width: 280px; 
+background-repeat:repeat; 
+background-position:center;
+}
+li{
+    display:inline;
+    margin:5%;
+    font-size: larger;
+}
+header{
+}
+aside{
+width:49.5%;
+float:left;
+background-color:rgba(20, 120, 109, 0.5);
+min-height:640px;
+text-align: center;
+padding-top:2%;
+margin-right:0.5%;
+}
+.naslov{
+    font-size: larger;
+    font-style: italic;
+ }
+article{
+width:49.5%;
+float:right;
+background-color:rgba(136, 181, 30, 0.5);
+min-height:640px;
+text-align: center;
+padding-top:2%;
+margin-left:0.5%;
+}
+footer{
+float:bottom;
+text-align:center;
+background-color:rgba(188, 31, 42, 0.5);
+}
