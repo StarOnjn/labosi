@@ -33,20 +33,20 @@ include 'meni.php';
             <option value="ostalo">ostalo</option>
         </select>
 	<p>Opis proizvoda:<input type="text" name="opis" class="input text" required></p>
-	<p>Vegetarjanski:<input type="radio" name="vege" value="1">DA
-					<input type="radio" name="vege" value="0">NE</p>
-	<p>Halal:<input type="radio" name="halal" value="1">DA
-					<input type="radio" name="halal" value="0">NE</p>
-	<p>Košer:<input type="radio" name="koser" value="1">DA
-					<input type="radio" name="koser" value="0">NE</p>
+	<p>Vegetarjanski:<input type="radio" name="vege" value=1 required="">DA
+					<input type="radio" name="vege" value=0>NE</p>
+	<p>Halal:<input type="radio" name="halal" value=1>DA
+					<input type="radio" name="halal" value=0 required="">NE</p>
+	<p>Košer:<input type="radio" name="koser" value=1>DA
+					<input type="radio" name="koser" value=0 required="">NE</p>
     <p>Alergeni:<br/>
         <input type="checkbox" name="alergeni[]" value="soja">Soja
         <input type="checkbox" name="alergeni[]" value="jaja">Jaja
         <input type="checkbox" name="alergeni[]" value="kikiriki">Kikiriki
         <input type="checkbox" name="alergeni[]" value="rakovi">Rakovi
         <input type="checkbox" name="alergeni[]" value="mlijeko">Mlijeko <br/>
-        <input type="checkbox" name="alergeni[]" value="skoljke">Školjke
-        <input type="checkbox" name="alergeni[]" value="orasasti_plodovi">Orašasti plodovi
+        <input type="checkbox" name="alergeni[]" value="školjke">Školjke
+        <input type="checkbox" name="alergeni[]" value="orašasti plodovi">Orašasti plodovi
         <input type="checkbox" name="alergeni[]" value="jagode">Jagode
         <input type="checkbox" name="alergeni[]" value="kivi">Kivi
         <input type="checkbox" name="alergeni[]" value="ananas">Ananas

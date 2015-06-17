@@ -15,9 +15,11 @@ include 'meni.php';
 ?>
 </header>
 <article style="float:left;width:100%">
+    <form action="pdf_ispis.php" method="post">
     <label>Upišite traženi pojam:</label>
-    <input type="text" id="search_provjera" maxlength="20" placeholder="Search" onkeyup="ajax(this.value)">
-
+    <input type="text" name="search_provjera" id="search_provjera" maxlength="20" placeholder="Search" onkeyup="ajax(this.value)">
+        <input type="submit" value="PDF ispis">
+    </form>
     <script>
 
         function ajax(var string)
@@ -92,8 +94,6 @@ function kliknuto() {
     {
         print "<th>".$popis_tablica['column_name']."</th>";
     }
-
-
         //kreiranje liste
     foreach($db->query($upit) as $ispis)
     {
@@ -101,9 +101,7 @@ function kliknuto() {
     }
 
     //Brisanje (makar koliko sam pročitao, ne baš dobra metoda, tj. nedovoljna)
-    $dbh = null;
-
-
+    $db = null;
     ?>
 </table>
 </article>
