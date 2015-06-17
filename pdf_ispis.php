@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('charset=utf-8');
 include 'provjera_login.php';
 
 
@@ -57,10 +58,10 @@ $pdf->Write(5,"Opis proizvoda");
 $pdf->SetXY($x4,$y);
 $pdf->Write(5,"Cijena");
 
-$pdf->SetFont('helvetica', '', 10, '', true);
+$pdf->SetFont('dejavusans', '', 9, '', true);
 
 //Postoje 2 problema koja nisu riješena.
-//1. Ne ispisuje hrvatske znakove, problem je u bazi
+//1. Ne ispisuje hrvatske znakove ->riješeno, promjenjen font
 //2. Ukoliko pređe na drugu stranicu pdf se potrga i ispiše jako puno stranica sa po jednim podatkom na svakoj
 foreach($db->query($upit) as $ispis)
 {
