@@ -60,7 +60,7 @@ $pdf->Write(5,"Cijena");
 $pdf->SetFont('helvetica', '', 10, '', true);
 
 //Postoje 2 problema koja nisu riješena.
-//1. Ne ispisuje hrvatske znakove, problem je u bazi
+//1. Ne ispisuje hrvatske znakove
 //2. Ukoliko pređe na drugu stranicu pdf se potrga i ispiše jako puno stranica sa po jednim podatkom na svakoj
 foreach($db->query($upit) as $ispis)
 {
