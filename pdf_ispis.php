@@ -61,7 +61,11 @@ $pdf->Write(5,"Cijena");
 $pdf->SetFont('dejavusans', '', 9, '', true);
 
 //Postoje 2 problema koja nisu riješena.
+<<<<<<< HEAD
 //1. Ne ispisuje hrvatske znakove ->riješeno, promjenjen font
+=======
+//1. Ne ispisuje hrvatske znakove
+>>>>>>> origin/master
 //2. Ukoliko pređe na drugu stranicu pdf se potrga i ispiše jako puno stranica sa po jednim podatkom na svakoj
 foreach($db->query($upit) as $ispis)
 {
